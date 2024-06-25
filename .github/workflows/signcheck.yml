@@ -1,7 +1,7 @@
 name: signzyw
 on:
   schedule:
-  - cron: 0 0 * * *
+    - cron: '0 0 * * *'
   workflow_dispatch:
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
           python3 ./main.py
         env:
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          USERNAME:${{secrets.USERNAME}}
-          PASSWORD:${{secrets.PASSWORD}}
-          
-      - uses: gautamkrishnar/keepalive-workflow@master
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        
+      - uses: gautamkrishnar/keepalive-workflow@v1
