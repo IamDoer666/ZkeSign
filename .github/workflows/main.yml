@@ -16,7 +16,7 @@ jobs:
           python3 ./main.py
         env:
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          USERNAME:${{secrets.USERNAME}}
-          PASSWORD:${{secrets.PASSWORD}}
-          
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        
       - uses: gautamkrishnar/keepalive-workflow@master
