@@ -1,0 +1,19 @@
+name: signzyw
+on:
+  schedule:
+  - cron: 0 0 * * *
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install requirements
+        run: |
+          pip3 install -r ./requirements.txt
+      - name: Run checkin
+        run: |
+          python3 ./main.py
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+      - uses: gautamkrishnar/keepalive-workflow@master
