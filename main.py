@@ -4,9 +4,9 @@ import os
 
 class Sign:
     def __init__(self) -> None:
-        self.username=os.environ.get("username")
-        self.password = os.environ.get("password")
-        self.serect = os.environ.get("serect")
+        self.username=os.environ.get("USERNAME")
+        self.password = os.environ.get("PASSWORD")
+        self.serect = os.environ.get("PUSHPLUS_TOKEN")
         self.headers={
             "accept": "application/json, text/javascript, */*; q=0.01",
             "accept-language": "zh-CN,zh;q=0.9",
@@ -49,6 +49,7 @@ class Sign:
         if(res["code"]==200):
             print("发送成功")
         else:
+            print(data)
             print("发送失败")
     
     # 进入签到页面,获取用户的账号余额信息
